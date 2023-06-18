@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Reporte</title>
+  <style>
+    /* Estilos CSS básicos para darle una apariencia similar a Discord */
+    body {
+      background-color: #36393F;
+      color: #FFF;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #2F3136;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #CCC;
+      background-color: #FFF;
+      color: #36393F;
+    }
+    
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #7289DA;
+      color: #FFF;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    button.cancel {
+      background-color: #747F8D;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Formulario de Reporte</h1>
+    <!---img src="imagen/registro.png" alt = "template memo work" width="80%""-->
+    <form id="report-form" action="https://formsubmit.co/hamilton.edwin@gmail.com" method="POST">
+        <!--form id="report-form"  action=formulario.php method="post"-->
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required>
+     
+      <input type="hidden" id="e-mail" name="e-mail" value="hamilton.edwin@gmail.com" required>
+      
+      <label for="equipment-series">Serie del equipo:</label>
+      <input type="text" id="equipment-series" name="equipment-series" required>
+          
+      <label for="center">Centro:</label>
+      <select id="center" name="center" required>
+        <option value="">Selecciona un centro</option>
+        <option value="Padre Billini">Padre Billini</option>
+        <option value="CECANOT">CECANOT</option>
+        <option value="Nefrosalud">Nefrosalud</option>
+      </select>
+      
+      <label for="equipment">Equipo:</label>
+      <select id="equipment" name="equipment" required>
+        <option value="">Selecciona un equipo</option>
+        <option value="Dialog +">Dialog +</option>
+        <option value="Erba xl200">Erba xl200</option>
+        <option value="Drew 3">Drew 3</option>
+      </select>
+      <label for="details">Detalles:</label>
+      <textarea id="details" name="details" rows="4" style="width: 100%;" required></textarea>
+     
+      <label type="e-mail" name="e-mail" size="50"></br>    
+      
+        <button type="submit">Enviar</button>
+      <button type="button" class ="cancel">Cancelar</button>
+
+    </form>
+    <!--script>
+        // Manejar el envío del formulario al correo electrónico
+        document.getElementById('report-form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Evitar el envío del formulario por defecto
+          
+          // Obtener los valores del formulario
+          var name = document.getElementById('name').value;
+          var equipmentSeries = document.getElementById('equipment-series').value;
+          var center = document.getElementById('center').value;
+          var equipment = document.getElementById('equipment').value;
+          var details = document.getElementById('details').value;
+
+
+          // Crear el mensaje de correo electrónico
+          var message = "Nombre: " + name + "\n";
+          message += "Serie del equipo: " + equipmentSeries + "\n";
+          message += "Centro: " + center + "\n";
+          message += "Equipo: " + equipment+ "\n" ;
+          message += "Detalles del reporte: " + details + "\n";
+
+          // Simular el envío del correo electrónico
+          // Aquí puedes agregar la lógica de envío real en el servidor backend
+          // Por ahora, mostraremos una alerta con el mensaje
+          alert("Se ha enviado el reporte:\n\n" + message);
+          
+          // Restablecer el formulario
+          document.getElementById('report-form').reset();
+        });
+        
+        // Limpiar el formulario al hacer clic en el botón "Cancelar"
+        document.querySelector('.cancel').addEventListener('click', function() {
+          document.getElementById('report-form').reset();
+        });
+      </script>
+      
